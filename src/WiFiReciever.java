@@ -7,11 +7,8 @@ public class WiFiReciever {
 	static MotorController wheelbase = new MotorController(); //Lav non-static, kan ikke huske Java
 	
 	public static void main(String[] args) throws Exception {
-		//LCD.drawString("Hej!", 0, 4);
-		//Delay.msDelay(10000);
-		
-		System.out.println(" Server started!  " );
         ServerSocket serverSocket = new ServerSocket(1337);
+		System.out.println(" Server started!  " );
         
         boolean kill = false;
         while(!kill) {
@@ -35,7 +32,6 @@ public class WiFiReciever {
             		} else {
             			wheelbase.drive(Integer.parseInt(inputArgs[1]), 500);
             		}
-            		//socketWriter.write("Moving forward!\r\n");
             		break;
             	case "left":
             		wheelbase.turnLeft(Integer.parseInt(inputArgs[1]));
